@@ -7,31 +7,25 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CategoryAdapter(private val categories: List<Categories>) :
+class CategoryAdapter(private val categories: List<Category>, private val onItemClick: (Category) -> Unit) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
-    inner class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val categoryText: TextView = itemView.findViewById(R.id.tvCategory)
-        private val categoryImage: ImageView = itemView.findViewById(R.id.ivCategory)
-
-        fun bind(category: Categories) {
-            categoryText.text = category.category
-            categoryImage.setImageResource(category.image)
-        }
+    class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val titleTextView: TextView = itemView.findViewById(R.id.tvCategory)
+        val imageView: ImageView = itemView.findViewById(R.id.ivCategory)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_category_card, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_category_card, parent, false)
         return CategoryViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val category = categories[position]
-        holder.bind(category)
+        holder.titleTextView.text = category.title
+        holder.imageView.setImageResource(category.imageResource)
+        holder.itemView.setOnClickListener { onItemClick(category) }
     }
 
-    override fun getItemCount(): Int {
-        return categories.size
-    }
+    override fun getItemCount(): Int = categories.size
 }
