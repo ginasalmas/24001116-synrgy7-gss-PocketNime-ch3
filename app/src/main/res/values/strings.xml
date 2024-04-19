@@ -3,4 +3,22 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="category">Category</string>
+
+    <string-array name="data_name">
+        <item>Isekai</item>
+        <item>Fantasy</item>
+        <item>Advanture</item>
+        <item>Comedy</item>
+        <item>Slice of Life</item>
+        <item>Romance</item>
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/isekai</item>
+        <item>@drawable/fantasy</item>
+        <item>@drawable/advanture</item>
+        <item>@drawable/comedy</item>
+        <item>@drawable/sof</item>
+        <item>@drawable/romance</item>
+    </integer-array>
 </resources>

@@ -1,6 +1,6 @@
 package com.example.pocketnime
 
-data class Category(
+data class Categories(
+    val category: String,
     val image: Int,
-    val categoryGenre: String,
 )
