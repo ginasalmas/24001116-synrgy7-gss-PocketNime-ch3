@@ -25,7 +25,7 @@
 
     <string-array name="data_anime_title">
         <item>Keep Your Hands Off Eizouken!</item>
-        <item>Frieren: Beyond Journey's End</item>
+        <item>Frieren: Beyond Journeys End</item>
         <item>Reborn as a Vending Machine, I Now Wander the Dungeon</item>
         <item>Handa-kun</item>
         <item>Tanaka-kun is Always Listless</item>
@@ -47,6 +47,6 @@
         <item>https://myanimelist.net/anime/52619/Jidou_Hanbaiki_ni_Umarekawatta_Ore_wa_Meikyuu_wo_Samayou</item>
         <item>https://myanimelist.net/anime/32648/Handa-kun</item>
         <item>https://myanimelist.net/anime/32093/Tanaka-kun_wa_Itsumo_Kedaruge</item>
-        <item>https://myanimelist.net/anime/53590/Saijaku_Tamer_wa_Gomi_Hiroi_no_Tabi_wo_Hajimemashita?q=trash%20pick&cat=anime</item>
+        <item>https://myanimelist.net/anime/53590/Saijaku_Tamer_wa_Gomi_Hiroi_no_Tabi_wo_Hajimemashita</item>
     </string-array>
 </resources>
