@@ -36,14 +36,14 @@ class HomeFragment : Fragment() {
         view.findViewById<RecyclerView>(R.id.rvCategory).adapter = categoryAdapter
         view.findViewById<RecyclerView>(R.id.rvCategory).layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
-        // Initialize the anime adapter with sample data
         val animes = mutableListOf<Anime>()
         val animeTitles = resources.getStringArray(R.array.data_anime_title)
         val animePosters = resources.obtainTypedArray(R.array.data_anime_poster)
         val animeLinks = resources.getStringArray(R.array.data_anime_link)
+        val animeSynopses = resources.getStringArray(R.array.data_anime_synopsis) // Renamed this variable
 
         for (i in animeTitles.indices) {
-            animes.add(Anime(animeTitles[i], animePosters.getResourceId(i, 0), animeLinks[i]))
+            animes.add(Anime(animeTitles[i], animePosters.getResourceId(i, 0), animeLinks[i], animeSynopses[i]))
         }
         animePosters.recycle()
 
@@ -56,12 +56,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun onCategoryClicked(category: Category) {
-        // Handle category click event
         Toast.makeText(requireContext(), "Clicked: ${category.title}", Toast.LENGTH_SHORT).show()
     }
 
     private fun onAnimeClicked(anime: Anime) {
-        // Handle anime click event
         Toast.makeText(requireContext(), "Clicked: ${anime.animeTitle}", Toast.LENGTH_SHORT).show()
     }
 
