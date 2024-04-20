@@ -20,10 +20,12 @@ class DetailFragment : Fragment() {
 
         val dataTitle: TextView = view.findViewById(R.id.tvDetailTitle)
         val dataPoster: ImageView = view.findViewById(R.id.ivDetailPoster)
+        val dataSynopsis: TextView = view.findViewById(R.id.tvDetailSynopsis)
 
         anime?.let {
             dataTitle.text = it.animeTitle
             dataPoster.setImageResource(it.animePoster)
+            dataSynopsis.text = it.animeSynopsis
         }
 
         return view
