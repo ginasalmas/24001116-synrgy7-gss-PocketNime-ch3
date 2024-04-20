@@ -6,20 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.GridLayoutManager
 
 class HomeFragment : Fragment() {
 
-    private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var animeAdapter: AnimeListAdapter
+    private lateinit var rvAnime: RecyclerView
+    private val list = ArrayList<Anime>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        rvAnime = view.findViewById(R.id.rvAnimeList)
+        rvAnime.setHasFixedSize(true)
+        list.addAll(getListAnime())
+        showRecyclerList()
 
         // Initialize the adapter with sample data
         val categories = mutableListOf<Category>()
@@ -31,41 +38,57 @@ class HomeFragment : Fragment() {
         }
         dataPhotos.recycle()
 
-        categoryAdapter = CategoryAdapter(categories, ::onCategoryClicked)
+        val categoryAdapter = CategoryAdapter(categories) { category ->
+            onCategoryClicked(category)
+        }
 
         view.findViewById<RecyclerView>(R.id.rvCategory).adapter = categoryAdapter
-        view.findViewById<RecyclerView>(R.id.rvCategory).layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
-        val animes = mutableListOf<Anime>()
-        val animeTitles = resources.getStringArray(R.array.data_anime_title)
-        val animePosters = resources.obtainTypedArray(R.array.data_anime_poster)
-        val animeLinks = resources.getStringArray(R.array.data_anime_link)
-        val animeSynopses = resources.getStringArray(R.array.data_anime_synopsis) // Renamed this variable
-
-        for (i in animeTitles.indices) {
-            animes.add(Anime(animeTitles[i], animePosters.getResourceId(i, 0), animeLinks[i], animeSynopses[i]))
-        }
-        animePosters.recycle()
-
-        animeAdapter = AnimeListAdapter(animes, ::onAnimeClicked)
-
-        view.findViewById<RecyclerView>(R.id.rvAnimeList).adapter = animeAdapter
-        view.findViewById<RecyclerView>(R.id.rvAnimeList).layoutManager = GridLayoutManager(requireContext(), 3)
+        view.findViewById<RecyclerView>(R.id.rvCategory).layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
         return view
+    }
+
+    private fun getListAnime(): ArrayList<Anime> {
+        val dataTitles = resources.getStringArray(R.array.data_anime_title)
+        val dataPosters = resources.obtainTypedArray(R.array.data_anime_poster)
+        val dataLinks = resources.getStringArray(R.array.data_anime_link)
+        val dataSynopses = resources.getStringArray(R.array.data_anime_synopsis)
+
+        val listAnime = ArrayList<Anime>()
+        for (i in dataTitles.indices) {
+            val anime = Anime(dataTitles[i], dataPosters.getResourceId(i, -1), dataLinks[i], dataSynopses[i])
+            listAnime.add(anime)
+        }
+
+        dataPosters.recycle()
+        return listAnime
+    }
+
+    private fun showRecyclerList() {
+        rvAnime.layoutManager = GridLayoutManager(requireContext(), 3)
+        animeAdapter = AnimeListAdapter(requireContext(), list) { anime ->
+            val bundle = Bundle()
+            bundle.putParcelable(HomeFragment.INTENT_PARCELABLE, anime)
+            val detailFragment = DetailFragment()
+            detailFragment.arguments = bundle
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, detailFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+        rvAnime.adapter = animeAdapter
     }
 
     private fun onCategoryClicked(category: Category) {
         Toast.makeText(requireContext(), "Clicked: ${category.title}", Toast.LENGTH_SHORT).show()
     }
 
-    private fun onAnimeClicked(anime: Anime) {
-        Toast.makeText(requireContext(), "Clicked: ${anime.animeTitle}", Toast.LENGTH_SHORT).show()
-    }
-
     companion object {
         fun newInstance(): HomeFragment {
             return HomeFragment()
         }
+
+        const val INTENT_PARCELABLE = "anime_parcelable"
     }
 }
