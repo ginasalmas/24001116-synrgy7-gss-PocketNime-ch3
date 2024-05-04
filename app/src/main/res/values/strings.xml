@@ -8,6 +8,9 @@
     <string name="synopsis">Synopsis</string>
     <string name="anime_title">Anime Title</string>
     <string name="favorite">Favorite</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
 
     <string-array name="data_name">
         <item>Isekai</item>
@@ -62,7 +65,7 @@
         After a chance encounter where the two "save" the young model Tsubame Misuzaki from her overprotective bodyguard, a connection instantly sparks between Asakusa and Misuzaki, as both share an intense passion for art and animation. Whereas Asakusa is interested in backgrounds and settings, Misuzaki loves drawing the human form. Sensing a money-making opportunity, Kanamori suggests that they start an animation club, which they disguise as a motion picture club since the school already has an anime club. Thus begins the trio's journey of producing animation that will awe the world.
 
         From the brilliant mind of Masaaki Yuasa, Eizouken ni wa Te wo Dasu na! is a love letter to animation, wildly creative in its approach, and a testament to the potential of the medium.
-        """.trimIndent()
+        """
     </item>
 
         <item>
@@ -72,7 +75,7 @@
         However, the time that Frieren spends with her comrades is equivalent to merely a fraction of her life, which has lasted over a thousand years. When the party disbands after their victory, Frieren casually returns to her "usual" routine of collecting spells across the continent. Due to her different sense of time, she seemingly holds no strong feelings toward the experiences she went through.
 
         As the years pass, Frieren gradually realizes how her days in the hero's party truly impacted her. Witnessing the deaths of two of her former companions, Frieren begins to regret having taken their presence for granted; she vows to better understand humans and create real personal connections. Although the story of that once memorable journey has long ended, a new tale is about to begin.
-        """.trimIndent()
+        """
     </item>
 
         <item>
@@ -80,7 +83,7 @@
         A man with a passion for vending machines awakens to realize that he has not only died, but he has also been reborn as one of his beloved machines! Although he is a modern appliance in a fantasy world, he requires money in order to keep functioning. He is stuck in one location until a young girl named Lammis stumbles upon him. Amazed by the drinks and food he sells, Lammis uses her "Blessing of Might" to lift him with ease and take him back to the village of Clearflow Lake. There, she officially dubs him Boxxo.
 
         Despite his inability to converse with the villagers, Boxxo becomes an essential part of the community. His goods provide nourishment, and, as he gains new abilities and products, he becomes a staple of daily life. Nobody is as loyal to Boxxo as his first and best customer, Lammis. The more time he spends with her, the more he tries to help her elevate her skills as a young hunter.
-        """.trimIndent()
+        """
     </item>
 
         <item>
@@ -88,19 +91,19 @@
         Hated by everyone around him, Sei Handa goes about his high school life regarded as an outcast—or at least that is what he believes. In reality, Handa is the most popular student on campus, revered by all for his incomparable calligraphy skills, good looks, and cool personality. However, due to an endless series of misunderstandings, Handa perceives the worship he receives from his legions of fans as bullying, leading the school's idol to shut himself off from the rest of his classmates.
 
         But distancing himself from his peers does not deter them from adoring him; in fact, his attempts at drawing attention away from himself often end up unintentionally converting even the most skeptical of students into believers. Fashion models, shut-in delinquents, obsessive fangirls, and more—none can stand against the brilliance that is Sei Handa.
-        """.trimIndent()
+        """
     </item>
 
         <item>
         """
         For high school student Tanaka, the act of being listless is a way of life. Known for his inattentiveness and ability to fall asleep anywhere, Tanaka prays that each day will be as uneventful as the last, seeking to preserve his lazy lifestyle however he can by avoiding situations that require him to exert himself. Along with his dependable friend Oota who helps him with tasks he is unable to accomplish, the lethargic teenager constantly deals with events that prevent him from experiencing the quiet and peaceful days he longs for.
-        """.trimIndent()
+        """
     </item>
 
         <item>
         """
         In Ivy's world, stars are everything. She's a Tamer, born to subdue monsters and animals, but she was also born starless! With her life in danger, Ivy flees into the forest where she befriends a weak little slime named Sora—the one creature she can tame. Together, the unlikely pair set off on a journey, salvaging rubbish to survive. Along the way they'll win hearts, evade danger, and discover there's more to starless Ivy than meets the eye!
-        """.trimIndent()
+        """
     </item>
     </string-array>
 
