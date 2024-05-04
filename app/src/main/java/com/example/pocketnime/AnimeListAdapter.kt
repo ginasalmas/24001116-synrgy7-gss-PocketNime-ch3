@@ -20,6 +20,7 @@ class AnimeListAdapter(private val context: Context, private val listAnime: Arra
         val (animeTitle, animePoster) = listAnime[position]
         holder.tvTitle.text = animeTitle
         holder.ivPoster.setImageResource(animePoster)
+        holder.itemView.tag = listAnime[position]
 
         holder.itemView.setOnClickListener {
             onItemClick.invoke(listAnime[position])

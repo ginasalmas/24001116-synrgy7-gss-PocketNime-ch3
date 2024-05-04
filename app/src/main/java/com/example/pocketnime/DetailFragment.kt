@@ -1,5 +1,7 @@
 package com.example.pocketnime
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.google.android.material.button.MaterialButton
 
 class DetailFragment : Fragment() {
     override fun onCreateView(
@@ -21,6 +24,11 @@ class DetailFragment : Fragment() {
         val dataTitle: TextView = view.findViewById(R.id.tvDetailTitle)
         val dataPoster: ImageView = view.findViewById(R.id.ivDetailPoster)
         val dataSynopsis: TextView = view.findViewById(R.id.tvDetailSynopsis)
+        val btnMore = view.findViewById<MaterialButton>(R.id.btnMore)
+        btnMore.tag = anime
+        btnMore.setOnClickListener {
+            moreAnime(anime?.animeLink)
+        }
 
         anime?.let {
             dataTitle.text = it.animeTitle
@@ -29,5 +37,13 @@ class DetailFragment : Fragment() {
         }
 
         return view
+    }
+
+    private fun moreAnime(link: String?) {
+        link?.let {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(link)
+            startActivity(intent)
+        }
     }
 }
