@@ -1,4 +1,8 @@
-package com.example.pocketnime.login
+package com.example.pocketnime.repository
+
+import com.example.pocketnime.domain.AuthRepository
+import com.example.pocketnime.data.remote.AuthLocalDataSource
+import com.example.pocketnime.data.remote.AuthRemoteDataSource
 
 class AuthRepositoryImplement (
     private val authLocalDataSource: AuthLocalDataSource,

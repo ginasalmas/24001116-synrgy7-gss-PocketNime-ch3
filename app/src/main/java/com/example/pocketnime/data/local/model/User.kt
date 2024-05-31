@@ -1,4 +1,4 @@
-package com.example.pocketnime.login
+package com.example.pocketnime.data.local.model
 
 data class User(
     val email: String,

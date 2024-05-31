@@ -1,6 +1,7 @@
-package com.example.pocketnime.login
+package com.example.pocketnime.data.local
 
 import android.content.SharedPreferences
+import com.example.pocketnime.data.remote.AuthLocalDataSource
 
 class AuthLocalDataSourceImplement (
     private val sharedPreferences: SharedPreferences

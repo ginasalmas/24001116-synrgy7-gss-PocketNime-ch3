@@ -1,4 +1,4 @@
-package com.example.pocketnime.login
+package com.example.pocketnime.data.remote
 
 interface AuthLocalDataSource {
     fun saveToken(token: String)

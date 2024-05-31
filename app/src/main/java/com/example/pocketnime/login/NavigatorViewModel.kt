@@ -5,6 +5,11 @@ import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
+import com.example.pocketnime.domain.AuthRepository
+import com.example.pocketnime.data.local.AuthLocalDataSourceImplement
+import com.example.pocketnime.data.local.SharedPreferencesFactory
+import com.example.pocketnime.data.remote.AuthRemoteDataSourceImplement
+import com.example.pocketnime.repository.AuthRepositoryImplement
 
 class NavigatorViewModel (
     private val authRepository: AuthRepository

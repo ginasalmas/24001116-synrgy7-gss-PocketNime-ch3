@@ -1,8 +1,10 @@
-package com.example.pocketnime.login
+package com.example.pocketnime.data.remote
 
+import com.example.pocketnime.data.local.model.User
+import com.example.pocketnime.data.remote.AuthRemoteDataSource
 import kotlinx.coroutines.delay
 
-class AuthRemoteDataSourceImplement: AuthRemoteDataSource{
+class AuthRemoteDataSourceImplement: AuthRemoteDataSource {
 
     private var users = listOf(
         User(

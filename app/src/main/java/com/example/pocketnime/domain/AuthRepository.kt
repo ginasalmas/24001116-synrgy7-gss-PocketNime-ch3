@@ -1,4 +1,4 @@
-package com.example.pocketnime.login
+package com.example.pocketnime.domain
 
 interface AuthRepository {
 
